@@ -1,8 +1,391 @@
-# Namespace: Logical grouping for Kubernetes resources
+# =============================================================================
+# YAML (YAML Ain't Markup Language)
+# =============================================================================
+#
+# YAML is a human-readable data serialization language.
+#
+# It is commonly used for:
+# - Configuration files
+# - CI/CD Pipelines
+# - Kubernetes
+# - Docker Compose
+# - Ansible
+# - Cloud deployments
+#
+# Rules:
+# 1. Use spaces for indentation (do NOT use tabs).
+# 2. Comments start with #.
+# 3. Data is written as key: value pairs.
+# 4. Lists start with -.
+# 5. Indentation represents hierarchy.
+#
+# =============================================================================
+# 1. Comments
+# =============================================================================
+
+# This is a single-line comment.
+
+# =============================================================================
+# 2. Key-Value Pair
+# =============================================================================
+
+name: John
+age: 25
+city: Bangalore
+
+# name, age, and city are keys.
+# John, 25, and Bangalore are values.
+
+# =============================================================================
+# 3. Strings
+# =============================================================================
+
+firstName: John
+lastName: Doe
+country: India
+
+# Strings can be written without quotes.
+
+message: "Hello World"
+
+# Quotes are optional unless needed.
+
+# =============================================================================
+# 4. Numbers
+# =============================================================================
+
+integer: 100
+decimal: 99.99
+negative: -10
+
+# =============================================================================
+# 5. Boolean Values
+# =============================================================================
+
+isActive: true
+isAdmin: false
+
+# YAML supports:
+# true
+# false
+
+# =============================================================================
+# 6. Null Values
+# =============================================================================
+
+middleName: null
+nickname: ~
+
+# Both represent null.
+
+# =============================================================================
+# 7. Lists (Arrays)
+# =============================================================================
+
+fruits:
+  - Apple
+  - Banana
+  - Mango
+  - Orange
+
+# Each item begins with "-".
+
+# =============================================================================
+# 8. List of Numbers
+# =============================================================================
+
+marks:
+  - 90
+  - 80
+  - 95
+
+# =============================================================================
+# 9. Nested List
+# =============================================================================
+
+departments:
+  - HR
+  - Finance
+  - IT
+
+# =============================================================================
+# 10. Dictionary (Object / Map)
+# =============================================================================
+
+employee:
+  name: John
+  age: 25
+  city: Bangalore
+
+# employee is the parent object.
+# name, age, city are child properties.
+
+# =============================================================================
+# 11. Nested Objects
+# =============================================================================
+
+company:
+  name: Microsoft
+  address:
+    city: Hyderabad
+    state: Telangana
+    country: India
+
+# Objects can contain other objects.
+
+# =============================================================================
+# 12. List of Objects
+# =============================================================================
+
+employees:
+  - name: John
+    age: 25
+    city: Bangalore
+
+  - name: Alice
+    age: 30
+    city: Chennai
+
+  - name: Bob
+    age: 35
+    city: Mumbai
+
+# Every "-" creates a new object.
+
+# =============================================================================
+# 13. Multiple Levels of Nesting
+# =============================================================================
+
+organization:
+  departments:
+    - name: IT
+      employees:
+        - John
+        - Alice
+
+    - name: HR
+      employees:
+        - Bob
+        - David
+
+# =============================================================================
+# 14. Inline List
+# =============================================================================
+
+colors: [Red, Green, Blue]
+
+# Same as:
+#
+# colors:
+#   - Red
+#   - Green
+#   - Blue
+
+# =============================================================================
+# 15. Inline Object
+# =============================================================================
+
+person: {name: John, age: 25, city: Bangalore}
+
+# Same as:
+#
+# person:
+#   name: John
+#   age: 25
+#   city: Bangalore
+
+# =============================================================================
+# 16. Multi-line String (Literal Style)
+# =============================================================================
+
+description: |
+  This is line one.
+  This is line two.
+  This is line three.
+
+# "|" preserves line breaks.
+
+# Output:
+#
+# This is line one.
+# This is line two.
+# This is line three.
+
+# =============================================================================
+# 17. Folded Multi-line String
+# =============================================================================
+
+summary: >
+  This is line one.
+  This is line two.
+  This is line three.
+
+# ">" joins lines into one sentence.
+
+# Output:
+#
+# This is line one. This is line two. This is line three.
+
+# =============================================================================
+# 18. Special Characters
+# =============================================================================
+
+email: john@example.com
+website: https://example.com
+
+# Quotes are optional here.
+
+# =============================================================================
+# 19. Environment Variables Example
+# =============================================================================
+
+environment:
+  APP_NAME: MyApplication
+  PORT: 8080
+  DEBUG: true
+
+# =============================================================================
+# 20. Docker Compose Example
+# =============================================================================
+
+version: "3.9"
+
+services:
+  web:
+    image: nginx
+    ports:
+      - "80:80"
+
+# version → Compose version
+# services → List of containers
+# web → Service name
+# image → Docker image
+# ports → Port mapping
+
+# =============================================================================
+# 21. Kubernetes Example
+# =============================================================================
+
 apiVersion: v1
-kind: Namespace
+kind: Pod
+
 metadata:
-  name: roboshop  # Name of the namespace
-  labels:
-    name: development  # Label for environment
-    project: roboshop  # Label for project
+  name: mypod
+
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+
+# apiVersion → Kubernetes API version
+# kind → Resource type
+# metadata → Information about resource
+# spec → Desired configuration
+
+# =============================================================================
+# 22. Azure DevOps Pipeline Example
+# =============================================================================
+
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - script: echo "Hello World"
+
+# trigger → Branch to monitor
+# pool → Build agent
+# steps → Tasks
+# script → Command to execute
+
+# =============================================================================
+# 23. GitHub Actions Example
+# =============================================================================
+
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print Message
+        run: echo "Hello"
+
+# =============================================================================
+# 24. Anchors (&) and Aliases (*)
+# =============================================================================
+
+default: &defaults
+  timeout: 30
+  retries: 3
+
+development:
+  <<: *defaults
+  debug: true
+
+production:
+  <<: *defaults
+  debug: false
+
+# &defaults creates an anchor.
+# *defaults reuses the anchor.
+# << merges the values.
+
+# =============================================================================
+# 25. Common YAML Data Types
+# =============================================================================
+#
+# String
+# Number
+# Boolean
+# Null
+# List
+# Object
+#
+# =============================================================================
+
+example:
+
+  string: Hello
+
+  integer: 100
+
+  float: 99.5
+
+  boolean: true
+
+  nullValue: null
+
+  list:
+    - One
+    - Two
+
+  object:
+    key1: Value1
+    key2: Value2
+
+# =============================================================================
+# 26. YAML Best Practices
+# =============================================================================
+#
+# ✔ Use spaces instead of tabs.
+# ✔ Keep indentation consistent (usually 2 spaces).
+# ✔ Add comments for readability.
+# ✔ Use meaningful key names.
+# ✔ Avoid unnecessary quotes.
+# ✔ Validate YAML before using it.
+#
+# =============================================================================
+# End of YAML Tutorial
+# =============================================================================
