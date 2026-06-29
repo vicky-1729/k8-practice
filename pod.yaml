@@ -4,5 +4,7 @@ metadata:
   name: simple-web-pod
 spec:
   containers:
-  - name: nginx-app
+  - name: nginx
     image: nginx
+  - name: almalinux
+    image: almalinux
