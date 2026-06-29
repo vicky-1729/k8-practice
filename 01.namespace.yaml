@@ -5,3 +5,19 @@ metadata:
   labels:
     project: ecommerce
     environment: production
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: helath
+  labels:
+    project: ecommerce
+    environment: production
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nothing
+  labels:
+    project: ecommerce
+    environment: production
