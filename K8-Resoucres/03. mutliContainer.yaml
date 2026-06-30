@@ -5,6 +5,7 @@ metadata:
 spec:
   containers:
     - name: catalogue
-      image: nginx
+      image: nginx 
     - name: cart
       image: almalinux
+      command: ["sleep","100000"]
