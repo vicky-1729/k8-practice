@@ -5,6 +5,8 @@ metadata:
   labels:
     purpose: testing
     project: roboshop
+  Annotations:
+    use: "we are building k8-cluster"
 spec:
   containers:
   - name: nginx
