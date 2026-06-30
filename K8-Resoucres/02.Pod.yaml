@@ -1,8 +1,9 @@
+# Basic single-container pod example.
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-pod
+  name: nginx-single-pod
 spec:
   containers:
-    - name: nginx-test
+    - name: nginx
       image: nginx

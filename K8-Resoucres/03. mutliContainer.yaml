@@ -1,11 +1,14 @@
+# Multi-container pod example for sidecar-style workloads.
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-pod
+  name: nginx-sidecar-pod
 spec:
   containers:
     - name: catalogue
       image: nginx
     - name: cart
       image: almalinux
+      # IMPORTANT: keep this container running for multi-container demo.
+      # Keep the helper container alive for demo purposes.
       command: ["sleep","100000"]

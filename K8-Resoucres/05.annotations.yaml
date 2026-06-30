@@ -1,14 +1,15 @@
+# Pod annotations hold non-identifying metadata.
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: pod-Annot
-  labels: # inside
+  name: annotated-nginx-pod
+  labels:
     env: prod
-    project: wipro
+    app.kubernetes.io/name: demo-app
     tier: backend
-  annotations: # outside 
-    descrption: "you give hsdvfhvhdbsabfjkbkjbndkasjbjkdbbh jbjbbd"
+  annotations:
+    description: "Example pod showing how annotations can store operational notes."
 spec:
   containers:
-  - name: label
+  - name: nginx
     image: nginx

@@ -1,10 +1,11 @@
+# ConfigMap containing non-sensitive application settings.
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: pod-config
+  name: app-config
 
 data:
-  Trainer: "vicky"
-  course: "AWS"
-  Hours: "100hrs"
+  TRAINER_NAME: "vicky"
+  COURSE_NAME: "aws"
+  COURSE_HOURS: "100"
 

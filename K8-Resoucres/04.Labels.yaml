@@ -1,12 +1,13 @@
+# Pod with labels used for selection and grouping.
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: pod-label
+  name: labeled-nginx-pod
   labels:
     env: prod
-    project: wipro
+    app.kubernetes.io/name: demo-app
     tier: backend
 spec:
   containers:
-  - name: label
+  - name: nginx
     image: nginx

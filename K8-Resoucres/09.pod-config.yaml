@@ -1,11 +1,12 @@
+# Pod that imports all keys from ConfigMap as environment variables.
 apiVersion: v1
 kind: Pod
 metadata:
-  name: c-pod
+  name: config-consumer-pod
 spec:
   containers:
-    - name: test-part
+    - name: nginx
       image: nginx
       envFrom:
         - configMapRef:
-            name: pod-config
+            name: app-config

@@ -1,19 +1,22 @@
+# Pod with CPU and memory requests/limits.
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: resource-pod
+  name: resource-limited-nginx-pod
   labels:
     env: prod
-    project: wipro
+    app.kubernetes.io/name: demo-app
     tier: backend
 spec:
   containers:
-  - name: label
+  - name: nginx
     image: nginx
     resources:
-      requests: # soft limit 
+      # Requests define guaranteed minimum resources.
+      requests:
         memory: "64Mi"
         cpu: "250m"
-      limits: # hard limit
+      # Limits define maximum resources this container can consume.
+      limits:
         memory: "128Mi"
         cpu: "500m"
