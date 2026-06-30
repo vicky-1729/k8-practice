@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-demo
+  labels:
+    project: roboshop
+    env: Dev
+data:
+  mongodb_url: vicky1729.site
+  catalogue_url: vicky.site
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configmap
+  labels:
+    project: roboshop
+    env: Dev
+spec:
+  containers:
+  - name: pod-conf
+    image: nginx
+    envFrom:
+    - configMapRef:
+        name: configmap-demo
