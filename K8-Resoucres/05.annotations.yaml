@@ -1,4 +1,5 @@
 # Pod annotations hold non-identifying metadata.
+# IMP: annotations are for metadata only; they are not used in selectors.
 apiVersion: v1
 kind: Pod
 metadata: 

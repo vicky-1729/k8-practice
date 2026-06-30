@@ -1,4 +1,5 @@
 # Multi-container pod example for sidecar-style workloads.
+# IMP: all containers in one pod share the same network and storage context.
 apiVersion: v1
 kind: Pod
 metadata:

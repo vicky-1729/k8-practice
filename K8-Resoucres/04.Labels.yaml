@@ -1,4 +1,5 @@
 # Pod with labels used for selection and grouping.
+# IMP: labels are used by selectors (Service/Deployment), so keep them stable.
 apiVersion: v1
 kind: Pod
 metadata: 

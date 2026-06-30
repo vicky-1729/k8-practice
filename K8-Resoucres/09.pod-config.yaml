@@ -1,4 +1,5 @@
 # Pod that imports all keys from ConfigMap as environment variables.
+# IMP: key names in ConfigMap become env variable names in the container.
 apiVersion: v1
 kind: Pod
 metadata:

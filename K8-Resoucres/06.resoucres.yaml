@@ -1,4 +1,5 @@
 # Pod with CPU and memory requests/limits.
+# IMP: set both requests and limits to avoid resource contention.
 apiVersion: v1
 kind: Pod
 metadata: 

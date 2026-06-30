@@ -1,4 +1,5 @@
 # Basic single-container pod example.
+# IMP: pod name must be unique within a namespace.
 apiVersion: v1
 kind: Pod
 metadata:

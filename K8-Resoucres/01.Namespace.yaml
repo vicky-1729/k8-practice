@@ -1,4 +1,5 @@
 # Namespace used by demo resources in this folder.
+# IMP: create namespace first, then apply namespaced resources.
 apiVersion: v1
 kind: Namespace
 metadata:
