@@ -2,8 +2,9 @@ apiVersion: V1
 kind: Pod
 metadata:
   name: labels-demo
-  purpose: testing
-  project: roboshop
+  labels:
+    purpose: testing
+    project: roboshop
 spec:
   containers:
   - name: nginx
