@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: resource-pod
+  labels:
+    env: prod
+    project: wipro
+    tier: backend
+spec:
+  containers:
+  - name: label
+    image: nginx
+    resources:
+      requests: # soft limit 
+        memory: "64Mi"
+        cpu: "250m"
+      limits: # hard limit
+        memory: "128Mi"
+        cpu: "500m"

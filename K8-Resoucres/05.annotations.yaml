@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-Annot
+  labels: # inside
+    env: prod
+    project: wipro
+    tier: backend
+  annotations: # outside 
+    descrption: "you give hsdvfhvhdbsabfjkbkjbndkasjbjkdbbh jbjbbd"
+spec:
+  containers:
+  - name: label
+    image: nginx
