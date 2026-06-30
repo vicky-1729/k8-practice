@@ -7,4 +7,4 @@ spec:
     - name: catalogue
       image: nginx
     - name: cart
-      image: alamlinux
+      image: almalinux
