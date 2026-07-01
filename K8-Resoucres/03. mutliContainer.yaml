@@ -1,5 +1,3 @@
-# Multi-container pod example for sidecar-style workloads.
-# IMP: all containers in one pod share the same network and storage context.
 apiVersion: v1
 kind: Pod
 metadata:
@@ -13,3 +11,13 @@ spec:
       # IMPORTANT: keep this container running for multi-container demo.
       # Keep the helper container alive for demo purposes.
       command: ["sleep","100000"]
+
+# Notes
+# Multi-container pod example for sidecar-style workloads.
+# IMP: all containers in one pod share the same network and storage context.
+
+
+# Commands:
+#   kubectl get pods
+#   kubectl describe pod nginx-sidecar-pod
+#   kubectl logs nginx-sidecar-pod

@@ -18,3 +18,9 @@ spec:
 
       initialDelaySeconds: 10   # Wait 10 seconds before first health check
       periodSeconds: 5          # Perform health check every 5 seconds ports
+
+
+# Commands:
+#   kubectl get pods
+#   kubectl describe pod nginx-liveness
+#   kubectl logs nginx-liveness

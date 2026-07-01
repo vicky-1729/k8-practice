@@ -29,3 +29,11 @@ spec:
   containers:
     - name: nginx
       image: nginx
+
+
+# Commands:
+#   kubectl get svc
+#   kubectl describe svc service-np
+#   kubectl get pods
+#   kubectl describe pod nginx-np-service
+#   kubectl logs nginx-np-service

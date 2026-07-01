@@ -1,5 +1,3 @@
-# Pod annotations hold non-identifying metadata.
-# IMP: annotations are for metadata only; they are not used in selectors.
 apiVersion: v1
 kind: Pod
 metadata: 
@@ -14,3 +12,13 @@ spec:
   containers:
   - name: nginx
     image: nginx
+
+# Notes
+# Pod annotations hold non-identifying metadata.
+# IMP: annotations are for metadata only; they are not used in selectors.
+
+
+# Commands:
+#   kubectl get pods
+#   kubectl describe pod annotated-nginx-pod
+#   kubectl logs annotated-nginx-pod

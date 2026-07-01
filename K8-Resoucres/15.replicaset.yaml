@@ -22,3 +22,8 @@ spec:
       containers:
         - name: nginx
           image: nginx
+
+
+# Commands:
+#   kubectl get rs
+#   kubectl describe rs nginx-rp

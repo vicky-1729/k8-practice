@@ -18,3 +18,9 @@ spec:
 
       initialDelaySeconds: 10
       periodSeconds: 5
+
+
+# Commands:
+#   kubectl get pods
+#   kubectl describe pod nginx-readiness
+#   kubectl logs nginx-readiness

@@ -22,3 +22,8 @@ spec:
       containers:
         - name: nginx
           image: nginx
+
+
+# Commands:
+#   kubectl get deployment
+#   kubectl describe deployment nginx-dp

@@ -1,5 +1,3 @@
-# Pod with labels used for selection and grouping.
-# IMP: labels are used by selectors (Service/Deployment), so keep them stable.
 apiVersion: v1
 kind: Pod
 metadata: 
@@ -12,3 +10,13 @@ spec:
   containers:
   - name: nginx
     image: nginx
+
+# Notes
+# Pod with labels used for selection and grouping.
+# IMP: labels are used by selectors (Service/Deployment), so keep them stable.
+
+
+# Commands:
+#   kubectl get pods
+#   kubectl describe pod labeled-nginx-pod
+#   kubectl logs labeled-nginx-pod
