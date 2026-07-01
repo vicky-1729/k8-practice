@@ -8,12 +8,10 @@ spec:
     env: test
     purpose: pod-service-lb-demo
     project: roboshop
-
   ports:
     - protocol: TCP
       port: 80          # Service Port
       targetPort: 80    # Container Port
-
 ---
 apiVersion: v1
 kind: Pod
@@ -23,7 +21,6 @@ metadata:
     env: test
     purpose: pod-service-lb-demo
     project: roboshop
-
 spec:
   containers:
     - name: nginx
