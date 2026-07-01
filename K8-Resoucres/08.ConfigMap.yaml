@@ -1,3 +1,4 @@
+# Important: store only non-sensitive configuration data in ConfigMap.
 apiVersion: v1
 kind: ConfigMap
 metadata:

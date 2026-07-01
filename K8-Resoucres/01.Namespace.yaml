@@ -1,3 +1,6 @@
+# Important: create this namespace before applying namespaced resources.
+# Use this file to define only the demo-app namespace.
+# Namespace resources should be created first.
 apiVersion: v1
 kind: Namespace
 metadata:

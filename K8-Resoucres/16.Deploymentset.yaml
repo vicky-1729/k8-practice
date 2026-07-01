@@ -1,3 +1,4 @@
+# Important: Deployment manages ReplicaSets and pod rollouts automatically.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
