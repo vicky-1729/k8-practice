@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-rp
+  labels:
+    app: backend
+    tier: backend
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: dev
+      project: roboshop
+      purpose: replicas-demo
+
+  template:
+    metadata:
+      labels:
+        env: dev
+        project: roboshop
+        purpose: replicas-demo
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.30.3
