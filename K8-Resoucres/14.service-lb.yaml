@@ -13,6 +13,7 @@ spec:
       port: 80          # Service Port
       targetPort: 80    # Container Port
 ---
+
 apiVersion: v1
 kind: Pod
 metadata:
