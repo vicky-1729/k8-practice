@@ -6,26 +6,28 @@ metadata:
     purpose: service-demo
     env: dev
     project: wipro
+
 spec:
   selector:
-    #pod labels
     env: test
     purpose: pod-service-demo
     project: roboshop
+
   ports:
     - protocol: TCP
-      port: 80 #service
-      targetPort: 80 #service
-      
+      port: 80          # Service Port
+      targetPort: 80    # Container Port
+
 ---
 apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-service
-  lables:
+  labels:
     env: test
     purpose: pod-service-demo
     project: roboshop
+
 spec:
   containers:
     - name: nginx
